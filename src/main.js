@@ -1,6 +1,15 @@
 // query selector variables go here 👇
-var posterArticle = document.querySelector(".poster")
-var showRandomButton = document.querySelector(".show-random")
+var mainPoster = document.querySelector(".main-poster");
+var posterArticle = document.querySelector(".poster");
+var posterForm = document.querySelector(".poster-form");
+var savedPostersSection = document.querySelector(".saved-posters")
+
+var showSavedButton = document.querySelector(".show-saved");
+var showRandomButton = document.querySelector(".show-random");
+var showFormButton = document.querySelector(".show-form");
+
+var nevermindButton = document.querySelector(".show-main");
+var backToMainButton = document.querySelector(".back-to-main")
 // we've provided you with some data to work with 👇
 // tip: you can tuck this data out of view with the dropdown found near the line number where the variable is declared 
 var images = [
@@ -104,7 +113,11 @@ var savedPosters = [];
 var currentPoster;
 
 // event listeners go here 👇
-showRandomButton.addEventListener("click", showNewPoster)
+showRandomButton.addEventListener("click", showNewPoster);
+showFormButton.addEventListener("click", toggleFormVisibility);
+nevermindButton.addEventListener("click", toggleFormVisibility);
+showSavedButton.addEventListener("click", toggleSavedVisiblity);
+backToMainButton.addEventListener("click", toggleSavedVisiblity);
 // functions and event handlers go here 👇
 // (we've provided two to get you started)!
 function getRandomIndex(array) {
@@ -126,7 +139,19 @@ function showNewPoster() {
   console.log(posterArticle.innerHTML);
   posterArticle.children[0].src = posterData.imageURL;
   posterArticle.children[1].innerText = posterData.title;
-  posterArticle.children[2].innerText = posterData.quote
+  posterArticle.children[2].innerText = posterData.quote;
 };
+
+function toggleFormVisibility() {
+  mainPoster.classList.toggle('hidden');
+  posterForm.classList.toggle('hidden');
+  console.log("toggleFormVisibility called");
+};
+
+function toggleSavedVisiblity() {
+  mainPoster.classList.toggle('hidden');
+  savedPostersSection.classList.toggle('hidden');
+  console.log("toggleSavedVisibility called")
+}
 
 showNewPoster()
