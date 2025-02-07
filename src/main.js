@@ -171,7 +171,6 @@ function showNewPoster() {
   currentPoster = createPoster(newImageURLInput.value, 
                                newTitleInput.value, 
                                newQuoteInput.value);
-  debugger
   images.push(newImageURLInput.value)
   titles.push(newTitleInput.value)
   quotes.push(newQuoteInput.value)
