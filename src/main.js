@@ -189,18 +189,16 @@ function saveCurrentPoster() {
 };
 
 function updatePosterGrid() {
-
+  posterGrid.innerHTML = ""
   for (var i = 0; i < savedPosters.length; i++) {
-    posterGrid.insertAdjacentHTML`<article class="mini-poster">
-                    <img class="poster-img mini-poster" src="#{savedPosters[i].imageURL}" alt="nothin' to see here">
-                    <h1 class="poster-title mini-poster">#{savedPosters[i].title}</h1>
-                    <h3 class="poster-quote mini-poster">#{savedPosters[i].quote}</h3>
-                  </article>`
+    posterGrid.insertAdjacentHTML("beforeend", `<article class="mini-poster">
+                    <img src="${savedPosters[i].imageURL}" alt="nothin' to see here">
+                    <h2>${savedPosters[i].title}</h2>
+                    <h4>${savedPosters[i].quote}</h4>
+                  </article>`)
     // poster.children[0].src = savedPosters[i].imageURL;
     // poster.children[1].innerText = savedPosters[i].title;
     // poster.children[2].innerText = savedPosters[i].quote;
-    if (!posterGrid.innerHTML.includes(poster))
-      posterGrid.innerHTML += poster;
   };
 
 };
