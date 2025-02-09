@@ -124,11 +124,11 @@ var currentPoster;
 // event listeners go here 👇
 showRandomButton.addEventListener("click", createRandomPoster);
 
-showFormButton.addEventListener("click", toggleFormVisibility);
-nevermindButton.addEventListener("click", toggleFormVisibility);
+showFormButton.addEventListener("click", function() {changeView(posterForm)});
+nevermindButton.addEventListener("click", function() {changeView(posterForm)});
 
-showSavedButton.addEventListener("click", toggleSavedVisiblity);
-backToMainButton.addEventListener("click", toggleSavedVisiblity);
+showSavedButton.addEventListener("click", function() {changeView(savedPostersSection)});
+backToMainButton.addEventListener("click", function() {changeView(savedPostersSection)});
 
 submitInputButton.addEventListener("click", showNewPoster);
 
@@ -168,6 +168,11 @@ function toggleFormVisibility() {
 function toggleSavedVisiblity() {
   mainPoster.classList.toggle('hidden');
   savedPostersSection.classList.toggle('hidden');
+};
+
+function changeView(element) {
+  mainPoster.classList.toggle('hidden');
+  element.classList.toggle('hidden');
 };
 
 function showNewPoster() {
