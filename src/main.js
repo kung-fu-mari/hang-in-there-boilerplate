@@ -20,7 +20,7 @@ var submitInputButton = document.querySelector(".make-poster");
 var posterGrid = document.querySelector(".saved-posters-grid");
 
 var badPosterButton = document.querySelector(".show-bad");
-var badPosterGrid = document.querySelector(".bad-posters-grid");
+var badPosterGrid = document.querySelector(".bad-posters-flexbox");
 var badPostersSection = document.querySelector(".bad-posters");
 var badBackToMainButton = document.querySelector(".bad-back-to-main");
 // we've provided you with some data to work with 👇
@@ -336,7 +336,7 @@ function displayBadPosters() {
   for (var i = 0; i < badPosters.length; i++) {
     badPosterGrid.insertAdjacentHTML("beforeend", `<article class="mini-poster bad-poster-parent">
       <img class="bad-poster-child" src="${badPosters[i].imageURL}" alt="nothin' to see here">
-      <h2 class="bad-poster-child">${badPosters[i].title}</h2>
+      <h2 id=bad-poster-header class="bad-poster-child">${badPosters[i].title}</h2>
       <h4 class="bad-poster-child">${badPosters[i].quote}</h4>
       </article>`)
     // var article = document.getElementById(`#${badPosters[i].id}`)
