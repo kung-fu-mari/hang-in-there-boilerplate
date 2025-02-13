@@ -145,13 +145,8 @@ button:hover {
   text-transform: uppercase;
 }
 
-/* ~~~~~ SAVED POSTER SECTION ~~~~~ */
-/* 
-THERE IS RENAMING TO BE DONE
-.bad-poster-flexbox display: flexbox
+/* ~~~~~ BAD POSTER SECTION ~~~~~ */
 
-
-*/
 .bad-posters {
   padding: 40px;
 }
@@ -170,25 +165,6 @@ THERE IS RENAMING TO BE DONE
   background: darkgray;
 }
 
-.mini-poster img {
-  height:200px;
-  width: 300px;
-}
-
-.mini-poster h2 {
-  color: black
-}
-.mini-poster h4,
-.delete {
-  color: white;
-  line-height: 1;
-  width: 90%;
-}
-
-.mini-poster h2 {
-  font-size: 30px;
-  font-weight: normal;
-  letter-spacing: 5px;
-  margin-bottom: 10px;
-  text-transform: uppercase;
+#bad-poster-header {
+  color: black;
 }
